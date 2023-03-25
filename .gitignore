@@ -1,0 +1,11 @@
+Ddxy.GateServer/bin
+Ddxy.GateServer/obj
+.vs
+Ddxy.GameServer/bin
+Ddxy.GameServer/obj
+Libs/Ddxy.Common/bin
+Libs/Ddxy.Common/obj
+Libs/Ddxy.Protocol/bin
+Libs/Ddxy.Protocol/obj
+Libs/Ddxy.GrainInterfaces/bin
+Libs/Ddxy.GrainInterfaces/obj

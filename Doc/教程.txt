@@ -1,0 +1,48 @@
+
+前端：
+在开发机上先安装和配置好nodejs环境
+解压缩前端主工程，该目录下执行npm i命令，用Cocos Creator 2.4.8打开，并在resources/debug.json中配置好第2步搭建好的资源请求根目录
+修改assets\scripts\data\HttpData.ts
+
+修改config文件
+node运行前端主程根目录下encrypt.js即可生成
+
+linux后端：
+安装宝塔(mysql8、nginx，redis,phpMyAdmin)
+yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh
+宝塔新建数据库ddxy密码改为123456按顺序导入server.sql、admin.sql、ddxy.sql
+修改数据库管理账号为dhxy1
+
+安装node
+https://npm.taobao.org/mirrors/node/v14.17.3/node-v14.17.3-linux-x64.tar.xz
+命令xz -d node-v14.17.3-linux-x64.tar.xz
+命令ln -s /home/nodejs/node-v14.17.3-linux-x64/bin/node /usr/bin/node
+命令ln -s /home/nodejs/node-v14.17.3-linux-x64/bin/npm /usr/bin/npm
+安装.net 5 sdk
+https://docs.microsoft.com/zh-cn/dotnet/core/install/linux-centos
+安装证书
+cp /etc/pki/tls/cert.pem  /usr/local/openssl/cert.pem
+上传服务端、后台、Config配置表
+修改Ddxy.GameServer根目录appsettings.json里面的MYSQL信息和ConfigDir目录
+安装命令yum install screen
+screen -S *  新建窗口
+screen -R*  打开窗口
+CTRL+A+D退出窗口
+Ddxy.GateServer和Ddxy.GameServer目录运行命令dotnet run启动游戏
+后台
+后台目录运行命令
+npm i
+修改后台根目录文件package.json
+修改ddxy_admin\.nuxt\axios.js
+修改后台根目录nuxt.config.ts
+后台目录运行命令
+npm run dev
+npm run build
+如果报错运行
+sudo npm install   --unsafe-perm node-sass
+
+后台地址http://127.0.0.1:24000
+初始账号dhxy1初始密码dhxy123456
+后台添加区服
+ws://IP:2000/ws
+启动游戏
